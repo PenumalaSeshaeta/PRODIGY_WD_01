@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Event Management System Project for Prodigy</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top" "navbar">
+    <div class="w3-bar w3-black w3-card" id="myNavbar" style="height: 90px; display: flex; align-items: center;">
+      <a href="#home" class="w3-bar-item w3-button w3-wide">
+          <img id="logo" src="D:\PRODIGY_WD_01\images\Logo.png" alt="Company Logo" class="navbar-logo">
+      </a>
+      <div id="overlay" class="overlay">
+        <span class="close">&times;</span>
+        <img class="overlay-content" id="overlayImage" src="D:\PRODIGY_WD_01\images\Logo.png" alt="Company Logo">
+    </div>
+      <div class="w3-right w3-hide-small" style="display: flex; align-items: center; margin-left: auto;">
+        <a href="#about" class="w3-bar-item w3-button"><i class="fa fa-user"></i> ABOUT</a>
+        <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
+        <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+        <div class="w3-bar-item" style="display: flex; align-items: center;">
+            <input type="text" id="searchBox" placeholder="Search..." class="w3-input w3-border" "search-box" style="display: inline-block; width: auto;">
+            <button type="submit" class="w3-button w3-black"><i class="fa fa-search" ></i></button>
+        </div>
+      </div>
+  
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
+
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+    <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+  </nav>
+  
+  <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+    <div class="w3-display-left w3-text-white">
+      <img src="D:\PRODIGY_WD_01\images\bg img.jpg" alt="header image" style="width:1600px; height:1500px;">
+    <div class="w3-display-bottomleft w3-text-white w3-large" style="padding:24px 48px">
+      <i class="fa fa-envelope w3-hover-opacity" onclick="redirectTo('https://mail.google.com/mail/')"></i>
+      <i class="fa fa-linkedin w3-hover-opacity" onclick="redirectTo('https://www.linkedin.com/in/seshaetapenumala/')"></i>
+      <i class="fa fa-github w3-hover-opacity" onclick="redirectTo('https://github.com/PenumalaSeshaeta')"></i>
+      <i class="fa fa-instagram w3-hover-opacity" onclick="redirectTo('https://www.instagram.com/')"></i>
+      <i class="fa fa-facebook w3-hover-opacity" onclick="redirectTo('https://www.facebook.com/')"></i>
+    </div>
+  </header>
+<!-- About Section -->
+<div class="w3-container content" style="padding:128px 16px" id="about">
+    <h3 class="w3-center">ABOUT THE COMPANY</h3>
+    <p class="w3-center w3-large"><b><mark>Key features of our company</mark></b></p>
+    <div class="w3-row-padding w3-center" style="margin-top:100px">
+      <div class="w3-quarter">
+        <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+        <p class="w3-large"><b>Responsive</b></p>
+        <p><i>Our props adapt seamlessly to various locations, ensuring an optimal user experience in any occasion.</i></p>
+      </div>
+      <div class="w3-quarter">
+        <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
+        <p class="w3-large"><b>Passion</b></p>
+        <p><i>Fueled by our deep enthusiasm, we innovate with dedication and commitment to exceed expectations.</i></p>
+      </div>
+      <div class="w3-quarter">
+        <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+        <p class="w3-large"><b>Design</b></p>
+        <p><i>With meticulous attention to detail, we craft intuitive and visually appealing solutions that resonate with modern aesthetics.</i></p>
+      </div>
+      <div class="w3-quarter">
+        <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+        <p class="w3-large"><b>Support</b></p>
+        <p><i>Our dedicated team provides unwavering assistance, ensuring smooth operations and customer satisfaction every step of the way.</i></p>
+      </div>
+    </div>
+  </div>
+<!-- Promo Section -->
+<div class="w3-container custom-bg content" style="padding:128px 16px">
+    <div class="w3-row-padding">
+      <div class="w3-col m6">
+        <h3><b>We can design for:</b></h3><br>
+        <p>We provide props and other decor items according to your party theme at your location for a affordable cost with our team.</p><br>
+        <p><i>"As an event manager specializing in parties, my work revolves around crafting immersive and memorable experiences. I take pride in overseeing every facet of event planning, from conceptualization to execution. This includes meticulously coordinating logistics, selecting and managing vendors, and creating cohesive themes that resonate with client preferences. My role demands a keen eye for detail and creativity, ensuring each element—from venue setup to entertainment—aligns seamlessly with the client's vision. By providing exemplary service and anticipating needs, I strive to exceed expectations, leaving guests enchanted and hosts confident in the success of their celebrations."</i></p><br><br>
+        <p><a href="#work" class="w3-button w3-black"><i class="fa fa-th"> </i> View Our Works</a></p>
+      </div>
+      <div class="w3-col m6">
+        <img class="w3-image w3-round-large" src="D:\PRODIGY_WD_01\images\work.jpg" alt="Buildings" width="700" height="394">
+      </div>
+    </div>
+  </div>
+  
+<!-- Promo Section "Statistics" -->
+<div class="w3-container w3-row w3-center w3-dark-grey w3-padding-64 content">
+    <div class="w3-quarter">
+      <span class="w3-xxlarge">50+</span>
+      <br>Workers
+    </div>
+    <div class="w3-quarter">
+      <span class="w3-xxlarge">99+</span>
+      <br>Projects Done
+    </div>
+    <div class="w3-quarter">
+      <span class="w3-xxlarge">95+</span>
+      <br>Happy Clients
+    </div>
+    <div class="w3-quarter">
+      <span class="w3-xxlarge">150+</span>
+      <br>Props Decor
+    </div>
+  </div>
+  <!-- Work Section -->
+<div class="w3-container work-container content" style="padding:128px 16px" id="work">
+    <h3 class="w3-center">OUR WORK</h3>
+    <p class="w3-center w3-large">Events we organise</p>
+  
+    <div class="w3-row-padding" style="margin-top:64px">
+      <div class="w3-col l3 m6">
+        <img src="D:\PRODIGY_WD_01\images\1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bachelorette Party">
+      </div>
+      <div class="w3-col l3 m6">
+        <img src="D:\PRODIGY_WD_01\images\2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Christmas Party">
+      </div>
+      <div class="w3-col l3 m6">
+        <img src="D:\PRODIGY_WD_01\images\3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Themed Birthday">
+      </div>
+      <div class="w3-col l3 m6">
+        <img src="D:\PRODIGY_WD_01\images\4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Candle Light Dinner">
+      </div>
+    </div>
+    <div class="w3-row-padding w3-section">
+        <div class="w3-col l3 m6">
+          <img src="D:\PRODIGY_WD_01\images\5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Wedding Reception">
+        </div>
+        <div class="w3-col l3 m6">
+          <img src="D:\PRODIGY_WD_01\images\6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Cocktail Party">
+        </div>
+        <div class="w3-col l3 m6">
+          <img src="D:\PRODIGY_WD_01\images\7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Themed Birthday">
+        </div>
+        <div class="w3-col l3 m6">
+          <img src="D:\PRODIGY_WD_01\images\8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Destination Wedding">
+        </div>
+      </div>
+    </div>
+<!-- Modal -->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+    <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption" class="w3-opacity w3-large"></p>
+    </div>
+  </div>
+<!--reviews section-->
+<div class="w3-container reviews-container content" style="padding:50px 16px" id="review"></div>
+  <h2 class="w3-center"><i><mark><b>Check out our Reviews</b></mark></i></h2><br><br><br>
+  <button class="control prev" onclick="prevReviews()">&#10094;</button>
+  <div class="reviews-wrapper">
+      <div class="review">
+          <h3><b>Themed Birthday</b></h3>
+          <p><i>Great Service!I got each and every prop i asked for and our party went on so well. I Highly recommend.</i></p>
+      </div>
+      <div class="review">
+          <h3><b>Wedding Party</b></h3>
+          <p><i>We and all our guests love your service and the decor was apt and as expected, will come back again with another party plan soon.</i></p>
+      </div>
+      <div class="review">
+          <h3><b>Candle-Light Dinner</b></h3>
+          <p><i>This event was planned for our wedding anniversary at home. Excellent quality and fast delivery of all the props and setup to our home.</i></p>
+      </div>
+      <div class="review">
+          <h3><b>Reception</b></h3>
+          <p><i>We were suprised to see the best output at our reception party. Very satisfied with the decor as well.</i></p>
+      </div>
+      <div class="review">
+          <h3><b>Beach Wedding</b></h3>
+          <p><i>We just loved the way you did the detailing work. Exceptional customer service and thank you for the best memories.</i></p>
+      </div>
+  </div>
+  <button class="control next" onclick="nextReviews()">&#10095;</button>
+</div><br><br><br>
+<!-- Skills Section -->
+<div class="w3-container w3-light-grey w3-padding-64 content custom-container">
+    <div class="w3-row-padding custom-row-padding">
+      <div class="w3-col m6 custom-col">
+        <h3>Our Skills:</h3>
+        <p><i>Event organizers excel in coordinating logistics, ensuring seamless operations from venue selection and setup to managing schedules and resources, optimizing efficiency and minimizing disruptions.</i></p>
+        <p><i>Strong communication and negotiation skills are crucial for event organizers to liaise effectively with clients, vendors, and stakeholders, ensuring clear expectations, resolving conflicts diplomatically, and securing favorable terms and agreements.</i></p>
+      </div>
+      <div class="w3-col m6 custom-col">
+        <p class="w3-wide custom-wide"><i class="fa fa-paint-brush w3-margin-right"></i>Decoration</p>
+        <div class="w3-grey custom-grey">
+          <div class="w3-container w3-dark-grey custom-dark-grey w3-center" style="width:90%">90%</div>
+        </div>
+        <p class="w3-wide custom-wide"><i class="fa fa-archive w3-margin-right"></i>High Quality Props</p>
+        <div class="w3-grey custom-grey">
+          <div class="w3-container w3-dark-grey custom-dark-grey w3-center" style="width:95%">95%</div>
+        </div>
+        <p class="w3-wide custom-wide"><i class="fa fa-star w3-margin-right"></i>Best Service</p>
+        <div class="w3-grey custom-grey">
+          <div class="w3-container w3-dark-grey custom-dark-grey w3-center" style="width:92%">92%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<!-- Contact Section -->
+<div class="w3-container w3-light-grey content" style="padding:128px 16px" id="contact" >
+    <h3 class="w3-center">CONTACT</h3>
+    <p class="w3-center w3-large"><i>Lets get in touch. Send us a message:</i></p>
+    <div style="margin-top:48px">
+      <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Jubilee Hills, Hyderabad</p>
+      <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +91 123456789</p>
+      <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: blissfulbash@gmail.com</p>
+      <br>
+      <form action="/action_page.php" target="_blank">
+        <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+        <p>
+          <button class="w3-button w3-black" type="submit">
+            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+          </button>
+        </p>
+      </form>
+      <img src="D:\PRODIGY_WD_01\images\last.jpg" class="w3-image w3-greyscale" style="width:100%;margin-top:48px">
+    </div>
+  </div>
+  <!--map-->
+  <h3 class="w3-center"><i>Feel free to check out our event studio</i></h3>
+  <div id="map"></div>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64">
+  <div class="w3-content w3-row">
+    <div class="newsletter-section">
+      <form action="/subscribe" method="post" class="w3-container w3-padding">
+        <label for="newsletter" class="w3-large">Subscribe to our newsletter</label>
+        <div class="w3-margin-top">
+          <input class="w3-input w3-border w3-light-grey" type="email" placeholder="Your email" name="email" required>
+          <button class="w3-button w3-green w3-margin-top" type="submit">
+            <i class="fa fa-envelope"></i> Subscribe
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="footer-content">
+      <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+      <div class="w3-xlarge w3-section">
+        <i class="fa fa-envelope w3-hover-opacity" onclick="redirectTo('https://mail.google.com/mail/')"></i>
+        <i class="fa fa-linkedin w3-hover-opacity" onclick="redirectTo('https://www.linkedin.com/in/seshaetapenumala/')"></i>
+        <i class="fa fa-github w3-hover-opacity" onclick="redirectTo('https://github.com/PenumalaSeshaeta')"></i>
+        <i class="fa fa-instagram w3-hover-opacity" onclick="redirectTo('https://www.instagram.com/')"></i>
+        <i class="fa fa-facebook w3-hover-opacity" onclick="redirectTo('https://www.facebook.com/')"></i>
+      </div>
+      <p>Powered by <a href="https://en.wikipedia.org/wiki/Event_management" title="event" target="_blank" class="w3-hover-text-green">BlissfulBash</a></p>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>
